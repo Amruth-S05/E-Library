@@ -1,0 +1,13 @@
+# Virtual environment directory
+./venv
+
+# IDE files
+./.idea
+
+# Config secrets
+./app
+/secret.py
+
+# Python cache
+./__pycache__
+*.pyc
