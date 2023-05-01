@@ -62,3 +62,9 @@ engine = create_engine(url_object)
 
 def init_db():  # Creates schema in the database
     Base.metadata.create_all(engine)
+
+
+@click.command("init-db")  # creating cli command to initialize the database
+def init_db_command():
+    init_db()
+    click.echo("Database initialized.")
