@@ -1,12 +1,11 @@
 # Virtual environment directory
-./venv
+venv/
 
 # IDE files
-./.idea
+.idea/
 
 # Config secrets
-./app
-/secret.py
+app/secret.py
 
 # Python cache
 ./__pycache__
