@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Auth | Sign Up</title>
+{% endblock %}
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+{% block body %}
+<body>
+    <div>
+        <legend>Register Now</legend>
+    <form class="form-field" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <ul>
+                <li>{{ form.username.label }} {{ form.username }}</li>
+                <li>{{ form.email.label }} {{ form.email }}</li>
+                <li>{{ form.password.label }} {{ form.password }}</li>
+                <li>{{ form.confirm_password.label }} {{ form.confirm_password }}</li>
+            </ul>
+        </div>
+        {{ form.submit }}
+    </form>
+    <small>Already have an account ? <a href="{{ url_for('admin_bp.login') }}">Sign In</a> </small>
+    </div>
+</body>
+{% endblock %}
