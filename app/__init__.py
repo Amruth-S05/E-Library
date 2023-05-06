@@ -15,4 +15,7 @@ def create_app():
 
     app.cli.add_command(init_db_command)  # adding cli command to initialize db
 
+    from . import auth
+    app.register_blueprint(auth.admin_bp)
+
     return app
